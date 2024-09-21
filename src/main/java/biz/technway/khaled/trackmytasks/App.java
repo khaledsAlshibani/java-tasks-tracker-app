@@ -1,8 +1,8 @@
 package biz.technway.khaled.trackmytasks;
 
-import biz.technway.khaled.trackmytasks.View.DashboardView;
-import biz.technway.khaled.trackmytasks.View.SidebarView;
 import biz.technway.khaled.trackmytasks.controller.TaskController;
+import biz.technway.khaled.trackmytasks.view.DashboardView;
+import biz.technway.khaled.trackmytasks.view.SidebarView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;

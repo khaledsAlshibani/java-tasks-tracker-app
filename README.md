@@ -30,7 +30,7 @@ Track My Tasks is a simple task management desktop application built using JavaF
   - [Add New Task](#add-new-task)
   - [Expired Tasks](#expired-tasks)
   - [Task Saved Alert](#task-saved-alert)
-- [WHat Can App Do](#what-can-app-do)
+- [What Can App Do](#what-can-app-do)
 - [Technologies Used](#technologies-used)
 
 ---
@@ -92,7 +92,7 @@ Additional utility classes are placed in the `utils` package for reusability and
 
 ![Task Saved Alert](./assets/task-saved-alert.png)
 
-## WHat Can App Do
+## What Can App Do
 
 1. **Add a New Task**: Navigate to the "Add New Task" view and fill in the required details, then click "Save Task".
 2. **Manage Active Tasks**: From the "Active Tasks" view, complete, delete, or archive tasks.
