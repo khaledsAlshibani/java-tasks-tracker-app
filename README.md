@@ -1,20 +1,25 @@
 <div align="center">
 
-<h1 style="border-bottom: none;">Track My Tasks - JAVA Assignment</h1>
+<h1>Track My Tasks - JAVA Assignment</h1>
 
 Track My Tasks is a simple task management desktop application built using JavaFX. It was built as part of an assignment and is **not intended for real-world use**. It serves as an educational example to demonstrate how to structure a simple application using the MVC architecture.
 
 </div>
+
+---
 
 ## ⚠️ IMPORTANT NOTES
 
 - **No Data Persistence**: This application does not use any database or storage mechanism. Once the app is closed, **all data will be lost**.
 - **Educational Purpose Only**: This app is built for an assignment and **not intended for real-world use**.
 
+---
+
 ## TOC:
 
 - [⚠️ IMPORTANT NOTES](#️-important-notes)
 - [TOC:](#toc)
+- [Installation \& Usage](#installation--usage)
 - [Features](#features)
 - [Project Structure](#project-structure)
   - [MVC Architecture:](#mvc-architecture)
@@ -25,9 +30,19 @@ Track My Tasks is a simple task management desktop application built using JavaF
   - [Add New Task](#add-new-task)
   - [Expired Tasks](#expired-tasks)
   - [Task Saved Alert](#task-saved-alert)
-- [How to Use](#how-to-use)
+- [WHat Can App Do](#what-can-app-do)
 - [Technologies Used](#technologies-used)
 
+---
+
+## Installation & Usage
+
+1. **Clone App**:
+   ```bash
+   git clone https://github.com/khaledsAlshibani/java-tasks-tracker-app.git
+   ```
+   
+2. Run app in IDE supports Java (I used Netbeans IDE 22), and ensure that JavaFX is installed.
 
 ## Features
 
@@ -77,7 +92,7 @@ Additional utility classes are placed in the `utils` package for reusability and
 
 ![Task Saved Alert](./assets/task-saved-alert.png)
 
-## How to Use
+## WHat Can App Do
 
 1. **Add a New Task**: Navigate to the "Add New Task" view and fill in the required details, then click "Save Task".
 2. **Manage Active Tasks**: From the "Active Tasks" view, complete, delete, or archive tasks.
