@@ -16,7 +16,16 @@ public class ExpiredTasksView {
         this.taskController = taskController;
     }
 
-
+    /**
+     * Shows the expired tasks view in the given layout
+     *
+     * The expired tasks view displays all expired tasks in a vertical list.
+     * Each task is displayed with its title, description, label, and deadline.
+     * In addition, each task has a delete button. Clicking the delete button
+     * removes the task from the expired tasks view and from the database.
+     *
+     * @param layout the layout to show the expired tasks view in
+     */
     public void showExpiredTasksView(BorderPane layout) {
         VBox expiredTasksList = new VBox(20);
         expiredTasksList.getStyleClass().add("container");

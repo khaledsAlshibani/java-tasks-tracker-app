@@ -10,19 +10,23 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     private final TaskController taskController = new TaskController();
-    private BorderPane layout;
+    private final BorderPane layout = new BorderPane();
 
+    /**
+     * JavaFX application entry point.
+     *
+     * @param primaryStage primary stage for this application
+     */
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Track My Tasks");
 
-        layout = new BorderPane();
-
         SidebarView sidebarView = new SidebarView(taskController);
         sidebarView.showSidebarView(layout);
 
-        DashboardView homeView = new DashboardView(taskController);
-        homeView.showDashboardView(layout);
+        // Show Dashboard Interface as the home interface
+        DashboardView dashboardView = new DashboardView(taskController);
+        dashboardView.showDashboardView(layout);
 
         Scene scene = new Scene(layout, 800, 700);
         scene.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
@@ -30,6 +34,11 @@ public class App extends Application {
         primaryStage.show();
     }
 
+    /**
+     * Main entry point for this JavaFX application.
+     *
+     * @param args the command line arguments to pass to the application
+     */
     public static void main(String args[]) {
         launch(args);
     }

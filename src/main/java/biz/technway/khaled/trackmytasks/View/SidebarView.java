@@ -12,6 +12,14 @@ public class SidebarView {
         this.taskController = taskController;
     }
 
+    /**
+     * Sets up the Sidebar view, which contains a button to add a new
+     * task, as well as a menu with links to the Dashboard, Active Tasks,
+     * Completed Tasks, Archived Tasks, and Expired Tasks views.
+     *
+     * @param layout The BorderPane to which the Sidebar view should be
+     *               added.
+     */
     public void showSidebarView(BorderPane layout) {
         VBox sidebar = new VBox();
         sidebar.getStyleClass().add("sidebar");

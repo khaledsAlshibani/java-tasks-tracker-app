@@ -17,6 +17,19 @@ public class ActiveTasksView {
         this.taskController = taskController;
     }
 
+    /**
+     * Shows the active tasks view in the given layout
+     *
+     * The active tasks view displays all active tasks in a vertical list. Each
+     * task is displayed with its title, description, label, and deadline. In
+     * addition, each task has three buttons: complete, delete, and archive.
+     * Clicking the complete button marks the task as completed and removes it
+     * from the active tasks view. Clicking the delete button removes the task
+     * from the active tasks view and from the database. Clicking the archive
+     * button moves the task to the archived tasks view.
+     *
+     * @param layout the layout to show the active tasks view in
+     */
     public void showActiveTasksView(BorderPane layout) {
         VBox activeTasksList = new VBox(20);
         activeTasksList.getStyleClass().add("container");
@@ -31,10 +44,10 @@ public class ActiveTasksView {
             VBox taskBox = new VBox(10);
             taskBox.getStyleClass().add("task-item");
 
-            Label titleLabel = new Label("Title: " + task.getTitle());
-            Label descriptionLabel = new Label("Description: " + task.getDescription());
-            Label labelLabel = new Label("Label: " + task.getLabel());
-            Label deadlineLabel = new Label("Deadline: " + task.getDeadlineDate());
+            Label title = new Label("Title: " + task.getTitle());
+            Label description = new Label("Description: " + task.getDescription());
+            Label label = new Label("Label: " + task.getLabel());
+            Label deadline = new Label("Deadline: " + task.getDeadlineDate());
 
             HBox buttons = new HBox(7);
             
@@ -59,7 +72,7 @@ public class ActiveTasksView {
             });
 
             buttons.getChildren().addAll(completeButton, deleteButton, archiveButton);
-            taskBox.getChildren().addAll(titleLabel, descriptionLabel, labelLabel, deadlineLabel, buttons);
+            taskBox.getChildren().addAll(title, description, label, deadline, buttons);
 
             activeTasksList.getChildren().add(taskBox);
         }

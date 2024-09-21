@@ -17,6 +17,15 @@ public class DashboardView {
         this.taskController = taskController;
     }
 
+    /**
+     * Sets up the Dashboard view, showing a welcome message and some
+     * statistics about the tasks stored in the application, such as the
+     * number of active, completed, archived, and expired tasks. Additionally,
+     * a button is provided to add a new task.
+     *
+     * @param layout The BorderPane to which the Dashboard view should be
+     *               added.
+     */
     public void showDashboardView(BorderPane layout) {
         VBox homeContent = new VBox(20); 
         homeContent.getStyleClass().add("container");

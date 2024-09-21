@@ -17,6 +17,18 @@ public class ArchivedTasksView {
         this.taskController = taskController;
     }
 
+    /**
+     * Shows the archived tasks view in the given layout
+     *
+     * The archived tasks view displays all archived tasks in a vertical list.
+     * Each task is displayed with its title, description, label, and deadline.
+     * In addition, each task has two buttons: unarchive, and delete.
+     * Clicking the unarchive button marks the task as active and removes it
+     * from the archived tasks view. Clicking the delete button removes the
+     * task from the archived tasks view and from the database.
+     *
+     * @param layout the layout to show the archived tasks view in
+     */
     public void showArchivedTasksView(BorderPane layout) {
         VBox archivedTasksList = new VBox(20);
         archivedTasksList.getStyleClass().add("container");

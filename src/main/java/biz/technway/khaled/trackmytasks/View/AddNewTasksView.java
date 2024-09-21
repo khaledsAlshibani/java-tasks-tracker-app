@@ -20,8 +20,14 @@ public class AddNewTasksView {
         this.taskController = taskController;
     }
 
+    /**
+     * Shows the add new task view, which contains a form to
+     * enter the details of a new task.
+     *
+     * @param layout the layout where the add new task view should
+     *               be rendered
+     */
     public void showAddNewTask(BorderPane layout) {
-
         VBox addNewTaskBox = new VBox(20);
         addNewTaskBox.getStyleClass().add("container");
 
@@ -45,10 +51,6 @@ public class AddNewTasksView {
         HBox buttons = new HBox(7);
         Button saveButton = new Button("✅ Save Task");
         saveButton.getStyleClass().add("button--save");
-        Button cancelButton = new Button("Cancel");
-        cancelButton.getStyleClass().add("button--cancel");
-        buttons.getChildren().addAll(saveButton, cancelButton);
-
         saveButton.setOnAction(e -> {
             String title = titleField.getText();
             String description = descriptionField.getText();
@@ -60,15 +62,6 @@ public class AddNewTasksView {
             TaskFormUtil.resetFields(titleField, labelField);
             TaskFormUtil.resetTextAreas(descriptionField);
             TaskFormUtil.resetDateInputs(deadlinePicker);
-        });
-
-        cancelButton.setOnAction(e -> {
-            TaskFormUtil.resetFields(titleField, labelField);
-            TaskFormUtil.resetTextAreas(descriptionField);
-            TaskFormUtil.resetDateInputs(deadlinePicker);
-
-            DashboardView dashboardView = new DashboardView(taskController);
-            dashboardView.showDashboardView(layout);
         });
 
         form.getChildren().addAll(titleField, descriptionField, labelField, deadlinePicker, buttons);

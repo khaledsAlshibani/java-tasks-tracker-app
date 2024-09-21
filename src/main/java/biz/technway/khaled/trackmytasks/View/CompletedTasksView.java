@@ -16,6 +16,16 @@ public class CompletedTasksView {
         this.taskController = taskController;
     }
 
+    /**
+     * Shows the completed tasks view in the given layout
+     *
+     * The completed tasks view displays all completed tasks in a vertical list.
+     * Each task is displayed with its title, description, label, and deadline.
+     * In addition, each task has a delete button. Clicking the delete button
+     * removes the task from the completed tasks view and from the database.
+     *
+     * @param layout the layout to show the completed tasks view in
+     */
     public void showCompletedTasksView(BorderPane layout) {
         VBox completedTasksList = new VBox(20);
         completedTasksList.getStyleClass().add("container");
