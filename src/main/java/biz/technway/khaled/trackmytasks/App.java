@@ -1,30 +1,36 @@
 package biz.technway.khaled.trackmytasks;
 
+import biz.technway.khaled.trackmytasks.View.DashboardView;
+import biz.technway.khaled.trackmytasks.View.SidebarView;
+import biz.technway.khaled.trackmytasks.controller.TaskController;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-
-/**
- * JavaFX App
- */
 public class App extends Application {
+    private final TaskController taskController = new TaskController();
+    private BorderPane layout;
 
     @Override
-    public void start(Stage stage) {
-        var javaVersion = SystemInfo.javaVersion();
-        var javafxVersion = SystemInfo.javafxVersion();
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Track My Tasks");
 
-        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        var scene = new Scene(new StackPane(label), 640, 480);
-        stage.setScene(scene);
-        stage.show();
+        layout = new BorderPane();
+
+        SidebarView sidebarView = new SidebarView(taskController);
+        sidebarView.showSidebarView(layout);
+
+        DashboardView homeView = new DashboardView(taskController);
+        homeView.showDashboardView(layout);
+
+        Scene scene = new Scene(layout, 800, 700);
+        scene.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
-    public static void main(String[] args) {
-        launch();
+    public static void main(String args[]) {
+        launch(args);
     }
-
 }
