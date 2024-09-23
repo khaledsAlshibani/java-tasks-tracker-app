@@ -49,6 +49,7 @@ public class AddNewTasksView {
         deadlinePicker.setPromptText("Enter Deadline");
 
         HBox buttons = new HBox(7);
+        
         Button saveButton = new Button("✅ Save Task");
         saveButton.getStyleClass().add("button--save");
         saveButton.setOnAction(e -> {
@@ -63,6 +64,19 @@ public class AddNewTasksView {
             TaskFormUtil.resetTextAreas(descriptionField);
             TaskFormUtil.resetDateInputs(deadlinePicker);
         });
+
+        Button cancelButton = new Button("Cancel");
+        cancelButton.getStyleClass().add("button--cancel");
+        cancelButton.setOnAction(e -> {
+            TaskFormUtil.resetFields(titleField, labelField);
+            TaskFormUtil.resetTextAreas(descriptionField);
+            TaskFormUtil.resetDateInputs(deadlinePicker);
+
+            DashboardView dashboardView = new DashboardView(taskController);
+            dashboardView.showDashboardView(layout);
+        });
+
+        buttons.getChildren().addAll(saveButton, cancelButton);
 
         form.getChildren().addAll(titleField, descriptionField, labelField, deadlinePicker, buttons);
         addNewTaskBox.getChildren().add(form);
