@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./assets/logo.png" alt="Track My Tasks Logo" width="120">
+
 <h1>Track My Tasks - JAVA Assignment</h1>
 
 Track My Tasks is a simple task management desktop application built using JavaFX. It was built as part of an assignment and is **not intended for real-world use**. It serves as an educational example to demonstrate how to structure a simple application using the MVC architecture.
@@ -61,7 +63,29 @@ The project is structured according to the **MVC pattern**, with a focus on sepa
 2. **View**: Handles the user interface, including the task views and input forms (`View` package).
 3. **Controller**: Manages interaction between the model and the view (`TaskController`).
 
-![Dashboard](./assets/mvc-flowchart.png)
+```mermaid
+graph TD
+  subgraph Model
+    TaskModel
+  end
+
+  subgraph View
+    AddNewTasksView
+    ActiveTasksView
+    ArchivedTasksView
+    CompletedTasksView
+    ExpiredTasksView
+    SidebarView
+    DashboardView
+  end
+
+  subgraph Controller
+    TaskController
+  end
+
+  Model --> Controller
+  Controller --> View
+```
 
 ### Utilities:
 
